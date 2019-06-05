@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="hugeFont.ttf">
+            <string>HUGE-AvantGarde-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ArmyOfOnes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainScreen" translatesAutoresizingMaskIntoConstraints="NO" id="CvL-bV-Qs9">
+                                <rect key="frame" x="40" y="68" width="295" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="C8l-5v-wyC"/>
+                                    <constraint firstAttribute="width" constant="295" id="WRc-QD-2H8"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$10" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-6d-uum">
+                                <rect key="frame" x="121.5" y="313" width="132" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OFY-sI-ZCi"/>
+                                    <constraint firstAttribute="width" constant="132" id="kOC-cC-5jM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iLT-Yo-92e"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter The Amount in US Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ax-bW-zXQ">
+                                <rect key="frame" x="39" y="271" width="297" height="18"/>
+                                <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAN-1a-WBf">
+                                <rect key="frame" x="138" y="539" width="99" height="99"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihH-2B-RqV">
+                                        <rect key="frame" x="29" y="19" width="42" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="KQH-sw-dad"/>
+                                            <constraint firstAttribute="width" constant="42" id="nfv-K9-Jbd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="49"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dN-FO-v8z">
+                                        <rect key="frame" x="29" y="19" width="42" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="9r2-tx-3zy"/>
+                                            <constraint firstAttribute="width" constant="42" id="qBf-bz-In1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="49"/>
+                                        <color key="textColor" red="0.86078470945358276" green="0.1853632926940918" blue="0.5411946177482605" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9dN-FO-v8z" firstAttribute="centerX" secondItem="ihH-2B-RqV" secondAttribute="centerX" id="Bj1-6U-IJu"/>
+                                    <constraint firstAttribute="width" constant="99" id="EBz-3Y-DCb"/>
+                                    <constraint firstAttribute="height" constant="99" id="M8y-wT-3xP"/>
+                                    <constraint firstItem="ihH-2B-RqV" firstAttribute="top" secondItem="nAN-1a-WBf" secondAttribute="top" constant="19" id="ON4-qR-gLw"/>
+                                    <constraint firstItem="9dN-FO-v8z" firstAttribute="centerY" secondItem="ihH-2B-RqV" secondAttribute="centerY" id="dPx-AF-9NY"/>
+                                    <constraint firstItem="ihH-2B-RqV" firstAttribute="centerX" secondItem="nAN-1a-WBf" secondAttribute="centerX" constant="0.25" id="iz1-tr-b8U"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-Kq-ys6">
+                                <rect key="frame" x="129" y="392" width="117" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="YX1-zg-OkC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="17"/>
+                                <state key="normal" title="CONVERT">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Cef-19-GEJ" kind="show" id="GR9-g5-alo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82505348668954759" green="0.92816029602227612" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="CvL-bV-Qs9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="4Y3-ep-gmL"/>
+                            <constraint firstItem="MBg-6d-uum" firstAttribute="top" secondItem="8ax-bW-zXQ" secondAttribute="bottom" constant="24" id="DHX-Tz-OMO"/>
+                            <constraint firstItem="8ax-bW-zXQ" firstAttribute="top" secondItem="CvL-bV-Qs9" secondAttribute="bottom" constant="46" id="Fm3-15-6Rb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vw7-Kq-ys6" secondAttribute="trailing" constant="129" id="JQp-0E-BIQ"/>
+                            <constraint firstItem="nAN-1a-WBf" firstAttribute="top" secondItem="vw7-Kq-ys6" secondAttribute="bottom" constant="98" id="ZJC-0a-1au"/>
+                            <constraint firstItem="vw7-Kq-ys6" firstAttribute="top" secondItem="MBg-6d-uum" secondAttribute="bottom" constant="49" id="ZZa-Xt-5fc"/>
+                            <constraint firstItem="8ax-bW-zXQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cM9-sC-Z1c"/>
+                            <constraint firstItem="vw7-Kq-ys6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cXa-Y3-mH2"/>
+                            <constraint firstItem="MBg-6d-uum" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eyY-Hs-UCJ"/>
+                            <constraint firstItem="nAN-1a-WBf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wes-tP-Wbs"/>
+                            <constraint firstItem="CvL-bV-Qs9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xsi-An-QGh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="vw7-Kq-ys6" id="LKs-XK-r1O"/>
+                        <outlet property="hugeIconBackground" destination="nAN-1a-WBf" id="Lwm-nn-0iX"/>
+                        <outlet property="hugeIconLabel" destination="ihH-2B-RqV" id="IjH-Ld-KUX"/>
+                        <outlet property="hugeIconLabelOverlay" destination="9dN-FO-v8z" id="JJu-sB-LEz"/>
+                        <outlet property="textField" destination="MBg-6d-uum" id="x8k-3g-4zj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48.799999999999997" y="20.239880059970016"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="vfa-et-Kie">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="Cef-19-GEJ" customClass="ChartViewController" customModule="ArmyOfOnes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vhs-Kp-glQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hag-qb-zNk" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="67" y="274" width="241" height="84"/>
+                                <color key="backgroundColor" red="0.8250534867" green="0.92816029600000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hag-qb-zNk" firstAttribute="leading" secondItem="FJ1-H2-fPb" secondAttribute="leading" constant="67" id="IcN-zl-qz8"/>
+                            <constraint firstItem="FJ1-H2-fPb" firstAttribute="bottom" secondItem="hag-qb-zNk" secondAttribute="bottom" constant="309" id="KU3-5u-HCk"/>
+                            <constraint firstItem="hag-qb-zNk" firstAttribute="top" secondItem="FJ1-H2-fPb" secondAttribute="top" constant="210" id="Obs-8c-gvR"/>
+                            <constraint firstItem="hag-qb-zNk" firstAttribute="centerX" secondItem="Vhs-Kp-glQ" secondAttribute="centerX" id="xZe-S8-YEB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FJ1-H2-fPb"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
+                    <connections>
+                        <outlet property="chartView" destination="hag-qb-zNk" id="ESp-Jd-G7q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OfR-Wl-hGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="15"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mainScreen" width="854" height="625"/>
+    </resources>
+</document>
