@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,67 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ArmyOfOnes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="CvL-bV-Qs9">
+                                <rect key="frame" x="40" y="54" width="295" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CvL-bV-Qs9" secondAttribute="height" multiplier="295:157" id="aup-tF-p2z"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$10" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-6d-uum">
+                                <rect key="frame" x="121" y="304" width="132" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="82z-Sd-AUe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mr4-Wk-pRG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter The Amount in US Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ax-bW-zXQ">
+                                <rect key="frame" x="44" y="257" width="287" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="2l5-9B-1A2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-Kq-ys6">
+                                <rect key="frame" x="146" y="373" width="82" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="T74-zT-eOQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <state key="normal" title="CONVERT"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82505348668954759" green="0.92816029602227612" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MBg-6d-uum" secondAttribute="trailing" constant="122" id="44U-H0-Hfr"/>
+                            <constraint firstItem="8ax-bW-zXQ" firstAttribute="top" secondItem="CvL-bV-Qs9" secondAttribute="bottom" constant="46" id="Fnt-tO-B0G"/>
+                            <constraint firstItem="CvL-bV-Qs9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="JxM-uH-LNh"/>
+                            <constraint firstItem="MBg-6d-uum" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="Kew-CD-2nn"/>
+                            <constraint firstItem="CvL-bV-Qs9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="Mr6-ZH-bzL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CvL-bV-Qs9" secondAttribute="trailing" constant="40" id="UCO-kI-o8G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ax-bW-zXQ" secondAttribute="trailing" constant="44" id="ang-aQ-ava"/>
+                            <constraint firstItem="vw7-Kq-ys6" firstAttribute="top" secondItem="MBg-6d-uum" secondAttribute="bottom" constant="39" id="ftI-9X-Qgh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vw7-Kq-ys6" secondAttribute="trailing" constant="147" id="gpg-Gs-v58"/>
+                            <constraint firstItem="MBg-6d-uum" firstAttribute="top" secondItem="8ax-bW-zXQ" secondAttribute="bottom" constant="24" id="nWF-mZ-bzE"/>
+                            <constraint firstItem="vw7-Kq-ys6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="146" id="paq-RK-NkN"/>
+                            <constraint firstItem="8ax-bW-zXQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="zfK-YH-WrS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="48.799999999999997" y="20.239880059970016"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="1301" height="1444"/>
+    </resources>
 </document>
