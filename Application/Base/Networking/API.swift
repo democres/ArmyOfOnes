@@ -52,10 +52,9 @@ extension Router {
     //MARK: - URLRequestConvertible
     
     func asURLRequest() throws -> URLRequest {
-        let url = URL(string: "https://app.flightlogger.com/")
+        let url = URL(string: "https://api.exchangeratesapi.io/")
         var urlRequest = URLRequest(url: url!.appendingPathComponent(query.path))
         urlRequest.httpMethod = query.httpMethod.rawValue
-        urlRequest.allHTTPHeaderFields(query.headers)
         let encoding = query.paremeterEncoding
         print ("\(query.httpMethod.rawValue) \(try encoding.encode(urlRequest, with: query.parameters))")
         return try encoding.encode(urlRequest, with: query.parameters)

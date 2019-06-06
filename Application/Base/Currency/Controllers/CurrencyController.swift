@@ -16,26 +16,24 @@ struct CurrencyController {
     static func getExchangeRate(amount: Float) -> [Currency] {
         let request = API.getExchangeRate(parameters:["base": "USD"])
         Alamofire.request(request).validate().responseJSON(queue: queue) { response in
-            if response.error != nil && (policy == .networkElseCache || policy == .cacheThenNetwork) {
-                DispatchQueue.main.async { completion(storedTrips, response.error) }
+            if response.error != nil {
                 return
             }
-            
-            var trips: [Trip]?
             if let value = response.result.value as? [String: Any] {
-                trips = Mapper<Trip>().mapArray(JSONObject: value["data"])?.sorted { ($0.id ?? 0) >= ($1.id ?? 0) }
-            }
-            if trips != nil {
-                storedTrips.forEach { storedTrip in
-                    if !(trips!.contains { $0.id == storedTrip.id } ) { TripStore.delete(storedTrip) }
-                }
-                TripStore.save(trips)
-            }
-            DispatchQueue.main.async {
-                completion(trips, response.error)
+                //                trips = Mapper<Trip>().mapArray(JSONObject: value["data"])?.sorted { ($0.id ?? 0) >= ($1.id ?? 0) }
+                print(value)
+                //            }
+                //            if trips != nil {
+                //                storedTrips.forEach { storedTrip in
+                //                    if !(trips!.contains { $0.id == storedTrip.id } ) { TripStore.delete(storedTrip) }
+                //                }
+                //                TripStore.save(trips)
+                //            }
+                //            DispatchQueue.main.async {
+                //                completion(trips, response.error)
+                //            }
             }
         }
-        
         
         var currencyArray = [Currency]()
         currencyArray.append(Currency(name: "EUR", value: 12.1))
