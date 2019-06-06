@@ -7,8 +7,23 @@
 //
 
 import Foundation
+import ObjectMapper
 
 struct Currency {
-    var name: String
-    var value: Float
+    var base: String
+    var rates: String
+
+
+    //MARK: - Mappable
+    
+    convenience required init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        base <- map["value"]
+        rates <- map["name"]
+    }
+
+    
 }
