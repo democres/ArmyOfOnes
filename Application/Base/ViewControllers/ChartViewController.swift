@@ -8,107 +8,58 @@
 
 import Foundation
 import UIKit
-import Charts
 
-class ChartViewController: UIViewController, ChartViewDelegate {
+class ChartViewController: UIViewController {
+    @IBOutlet weak var basicBarChart: BasicBarChart?
+    @IBOutlet weak var barChart: BeautifulBarChart?
+    
+    private let numEntry = 5
 
-    @IBOutlet weak var chartView: BarChartView?
+    var currencyAmount: Float?
+    var currencyArray: [Currency]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        
-//        chartView?.delegate = self
-        chartView?.drawBarShadowEnabled = false
-        chartView?.drawValueAboveBarEnabled = false
-        chartView?.maxVisibleCount = 60
-
-        
-        chartView?.xAxis.labelPosition = .bottom
-        chartView?.xAxis.labelFont = .systemFont(ofSize: 10)
-        chartView?.xAxis.granularity = 1
-        chartView?.xAxis.labelCount = 7
-        chartView?.xAxis.valueFormatter = DefaultAxisValueFormatter(decimals: 1)
-        
-        let leftAxisFormatter = NumberFormatter()
-        leftAxisFormatter.minimumFractionDigits = 0
-        leftAxisFormatter.maximumFractionDigits = 1
-        leftAxisFormatter.negativeSuffix = " $"
-        leftAxisFormatter.positiveSuffix = " $"
-        
-        let leftAxis = chartView?.leftAxis
-        leftAxis?.labelFont = .systemFont(ofSize: 10)
-        leftAxis?.labelCount = 8
-        leftAxis?.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
-        leftAxis?.labelPosition = .outsideChart
-        leftAxis?.spaceTop = 0.15
-        leftAxis?.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
-        
-        let rightAxis = chartView?.rightAxis
-        rightAxis?.enabled = true
-        rightAxis?.labelFont = .systemFont(ofSize: 10)
-        rightAxis?.labelCount = 8
-        rightAxis?.valueFormatter = leftAxis?.valueFormatter
-        rightAxis?.spaceTop = 0.15
-        rightAxis?.axisMinimum = 0
-        
-        let legend = chartView?.legend
-        legend?.horizontalAlignment = .left
-        legend?.verticalAlignment = .bottom
-        legend?.orientation = .horizontal
-        legend?.drawInside = false
-        legend?.form = .circle
-        legend?.formSize = 9
-        legend?.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
-        legend?.xEntrySpace = 4
-        
-//
-//
-//        let marker = MarkerView(color: UIColor.green,
-//                                  font: .systemFont(ofSize: 12),
-//                                  textColor: .white,
-//                                  insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8),
-//                                  xAxisValueFormatter: chartView?.xAxis.valueFormatter!)
-//        marker.chartView = chartView
-//        marker.minimumSize = CGSize(width: 80, height: 40)
-//        chartView.marker = marker
-
-        
-        
-        
-        
-        updateGraph()
+        fetchViewControllerData()
     }
     
-    
-    
-    func updateGraph(){
-        var lineChartEntry  = [ChartDataEntry]()
-        var numbers = [0.2,1.2,44.1,1.0]
+    override func viewDidAppear(_ animated: Bool) {
         
-        
-        //here is the for loop
-        for i in 0..<numbers.count {
-            
-            let value = ChartDataEntry(x: Double(i), y: numbers[i])
-            lineChartEntry.append(value) // here we add it to the data set
+        let dataEntries = generateEmptyDataEntries()
+        basicBarChart?.updateDataEntries(dataEntries: dataEntries, animated: false)
+        barChart?.updateDataEntries(dataEntries: dataEntries, animated: false)
+
+        let timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) {[weak self] (timer) in
+            let dataEntries = self?.generateRandomDataEntries()
+            self?.barChart?.updateDataEntries(dataEntries: dataEntries!, animated: true)
+            self?.basicBarChart?.updateDataEntries(dataEntries: dataEntries!, animated: true)
         }
-        
-        
-        
-        let line1 = BarChartDataSet(entries: lineChartEntry, label: "DAMN")
-        line1.colors = [NSUIColor.green] //Sets the colour to blue
-        
-        let data = BarChartData() //This is the object that will be added to the chart
-        data.addDataSet(line1) //Adds the line to the dataSet
-        
-        
-        chartView?.data = data //finally - it adds the chart data to the chart and causes an update
-        chartView?.chartDescription?.text = "My awesome chart" // Here we set the description for the graph
+        timer.fire()
+    
+    }
+    
+    func fetchViewControllerData(){
+        currencyArray = CurrencyController.getExchangeRate(amount: currencyAmount ?? 1)
     }
     
     
+    func generateEmptyDataEntries() -> [DataEntry] {
+        var result: [DataEntry] = []
+        for _ in currencyArray! {
+            result.append(DataEntry(color: UIColor.clear, height: 0, textValue:"", title: ""))
+        }
+        return result
+    }
+    
+    func generateRandomDataEntries() -> [DataEntry] {
+        let colors = [#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)]
+        var result: [DataEntry] = []
+        for i in 0..<(currencyArray?.count ?? 0) {
+            let value = currencyArray?[i].value ?? 0
+            let height: Float = Float(value) / 100.0
+            result.append(DataEntry(color: colors[i % colors.count], height: height, textValue:"\(currencyArray?[i].value ?? 0.0)", title: currencyArray?[i].name ?? ""))
+        }
+        return result
+    }
 }
-
-
 

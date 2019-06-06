@@ -26,7 +26,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.hideKeyboardWhenTappedAround()
         
     }
-
+    
     func addShadows(){
         
         button?.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
@@ -77,8 +77,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBAction func calculate(_ sender: Any) {
         print("A")
     }
-    
-    
     
     //MARK: TextField Delegates
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
