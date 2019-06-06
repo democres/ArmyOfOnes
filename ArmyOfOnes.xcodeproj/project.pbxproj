@@ -43,16 +43,15 @@
 		2730729722A9265200618110 /* BeautifulBarChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730726A22A9265200618110 /* BeautifulBarChartPresenter.swift */; };
 		2730729822A9265200618110 /* BeautifulBarChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730726A22A9265200618110 /* BeautifulBarChartPresenter.swift */; };
 		2730729922A9265200618110 /* BeautifulBarChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730726A22A9265200618110 /* BeautifulBarChartPresenter.swift */; };
-		273072A122A92FEB00618110 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273072A022A92FEB00618110 /* Alamofire.framework */; };
 		273072A322A936E500618110 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273072A222A936E500618110 /* Currency.swift */; };
 		273072A422A936E500618110 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273072A222A936E500618110 /* Currency.swift */; };
 		273072A522A936E500618110 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273072A222A936E500618110 /* Currency.swift */; };
 		276E89F322A7D06200260E67 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F222A7D06200260E67 /* UIColor.swift */; };
 		276E89F422A7D06200260E67 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F222A7D06200260E67 /* UIColor.swift */; };
 		276E89F522A7D06200260E67 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F222A7D06200260E67 /* UIColor.swift */; };
-		276E89F822A7D50300260E67 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F722A7D50300260E67 /* Router.swift */; };
-		276E89F922A7D50300260E67 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F722A7D50300260E67 /* Router.swift */; };
-		276E89FA22A7D50300260E67 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F722A7D50300260E67 /* Router.swift */; };
+		276E89F822A7D50300260E67 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F722A7D50300260E67 /* API.swift */; };
+		276E89F922A7D50300260E67 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F722A7D50300260E67 /* API.swift */; };
+		276E89FA22A7D50300260E67 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89F722A7D50300260E67 /* API.swift */; };
 		276E89FD22A7D58400260E67 /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89FC22A7D58400260E67 /* CurrencyController.swift */; };
 		276E89FE22A7D58400260E67 /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89FC22A7D58400260E67 /* CurrencyController.swift */; };
 		276E89FF22A7D58400260E67 /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276E89FC22A7D58400260E67 /* CurrencyController.swift */; };
@@ -77,6 +76,7 @@
 		27B90BE622A7CA6600FAA33E /* hugeFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B90BE522A7CA6600FAA33E /* hugeFont.ttf */; };
 		27B90BE722A7CA6600FAA33E /* hugeFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B90BE522A7CA6600FAA33E /* hugeFont.ttf */; };
 		27B90BE822A7CA6600FAA33E /* hugeFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B90BE522A7CA6600FAA33E /* hugeFont.ttf */; };
+		27CADB7022A94607002688CD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273072A022A92FEB00618110 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,7 @@
 		273072A022A92FEB00618110 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		273072A222A936E500618110 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		276E89F222A7D06200260E67 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		276E89F722A7D50300260E67 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		276E89F722A7D50300260E67 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		276E89FC22A7D58400260E67 /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
 		276E8A0122A7E37F00260E67 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		276E8A0822A7E9E300260E67 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				273072A122A92FEB00618110 /* Alamofire.framework in Frameworks */,
+				27CADB7022A94607002688CD /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +186,15 @@
 			path = BarChart;
 			sourceTree = "<group>";
 		};
+		273072A622A9432300618110 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				276E89FB22A7D57700260E67 /* Controllers */,
+				2730725822A9263400618110 /* Models */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
 		276E89F122A7D01100260E67 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +207,7 @@
 		276E89F622A7D4E300260E67 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				276E89FB22A7D57700260E67 /* Controllers */,
-				276E89F722A7D50300260E67 /* Router.swift */,
+				276E89F722A7D50300260E67 /* API.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -275,8 +283,8 @@
 		27B90BD422A76A1700FAA33E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				273072A622A9432300618110 /* Currency */,
 				2730725922A9265200618110 /* BarChart */,
-				2730725822A9263400618110 /* Models */,
 				276E8A0022A7D98E00260E67 /* ViewControllers */,
 				276E89F622A7D4E300260E67 /* Networking */,
 				27B90BDD22A76AB500FAA33E /* LaunchScreen */,
@@ -514,7 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2730729122A9265200618110 /* BeautifulBarChart.swift in Sources */,
-				276E89F822A7D50300260E67 /* Router.swift in Sources */,
+				276E89F822A7D50300260E67 /* API.swift in Sources */,
 				2730727022A9265200618110 /* CustomSegments.swift in Sources */,
 				276E8A0922A7E9E300260E67 /* ChartViewController.swift in Sources */,
 				2730727922A9265200618110 /* UIBezierPathExtension.swift in Sources */,
@@ -543,7 +551,7 @@
 				2730727122A9265200618110 /* CustomSegments.swift in Sources */,
 				27B90BA922A7695C00FAA33E /* ArmyOfOnesTests.swift in Sources */,
 				2730728322A9265200618110 /* DataEntry.swift in Sources */,
-				276E89F922A7D50300260E67 /* Router.swift in Sources */,
+				276E89F922A7D50300260E67 /* API.swift in Sources */,
 				2730728922A9265200618110 /* BeautifulBarEntry.swift in Sources */,
 				276E89FE22A7D58400260E67 /* CurrencyController.swift in Sources */,
 				276E89F422A7D06200260E67 /* UIColor.swift in Sources */,
@@ -569,7 +577,7 @@
 				2730727222A9265200618110 /* CustomSegments.swift in Sources */,
 				27B90BB422A7695C00FAA33E /* ArmyOfOnesUITests.swift in Sources */,
 				2730728422A9265200618110 /* DataEntry.swift in Sources */,
-				276E89FA22A7D50300260E67 /* Router.swift in Sources */,
+				276E89FA22A7D50300260E67 /* API.swift in Sources */,
 				2730728A22A9265200618110 /* BeautifulBarEntry.swift in Sources */,
 				276E89FF22A7D58400260E67 /* CurrencyController.swift in Sources */,
 				276E89F522A7D06200260E67 /* UIColor.swift in Sources */,
