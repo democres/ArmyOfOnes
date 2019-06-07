@@ -8,38 +8,21 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 struct CurrencyController {
     
     private static let queue = DispatchQueue(label: "com.hugeinc.armyofones.currencycontroller")
     
-    static func getExchangeRate(amount: Float) -> [Currency] {
+    static func getExchangeRate(completion: @escaping (Currency) -> ()) {
         let request = API.getExchangeRate(parameters:["base": "USD"])
         Alamofire.request(request).validate().responseJSON(queue: queue) { response in
             if response.error != nil {
                 return
             }
-            if let value = response.result.value as? [String: Any] {
-                //                trips = Mapper<Trip>().mapArray(JSONObject: value["data"])?.sorted { ($0.id ?? 0) >= ($1.id ?? 0) }
-                print(value)
-                //            }
-                //            if trips != nil {
-                //                storedTrips.forEach { storedTrip in
-                //                    if !(trips!.contains { $0.id == storedTrip.id } ) { TripStore.delete(storedTrip) }
-                //                }
-                //                TripStore.save(trips)
-                //            }
-                //            DispatchQueue.main.async {
-                //                completion(trips, response.error)
-                //            }
-            }
+            guard let value = response.result.value as? [String: Any],
+                let currencies = Mapper<Currency>().map(JSON: value) else { return }
+            completion(currencies)
         }
-        
-        var currencyArray = [Currency]()
-        currencyArray.append(Currency(name: "EUR", value: 12.1))
-        currencyArray.append(Currency(name: "SA", value: 4.1))
-        currencyArray.append(Currency(name: "ASD", value: 2.1))
-        currencyArray.append(Currency(name: "asdas", value: 10.1))
-        return currencyArray
     }
 }

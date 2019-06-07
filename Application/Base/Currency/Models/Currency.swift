@@ -9,21 +9,19 @@
 import Foundation
 import ObjectMapper
 
-struct Currency {
-    var base: String
-    var rates: String
+struct Currency: Mappable {
+    var base: String?
+    var rates: [String:Any]?
 
 
     //MARK: - Mappable
-    
-    convenience required init?(map: Map) {
-        self.init()
+    init?(map: Map) {
+        
     }
     
-    func mapping(map: Map) {
-        base <- map["value"]
-        rates <- map["name"]
+    mutating func mapping(map: Map) {
+        base <- map["base"]
+        rates <- map["rates"]
     }
-
     
 }

@@ -141,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Dollars:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07h-Sb-NUn">
-                                <rect key="frame" x="26" y="102" width="133" height="13"/>
+                                <rect key="frame" x="26" y="102" width="116.5" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="WVb-PQ-PGY"/>
                                 </constraints>
@@ -150,7 +150,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$10" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIC-mq-BvP">
-                                <rect key="frame" x="167" y="102" width="164" height="15"/>
+                                <rect key="frame" x="150.5" y="100" width="180.5" height="19"/>
                                 <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -162,6 +162,9 @@
                                     <constraint firstAttribute="width" constant="47" id="yJl-cX-LVE"/>
                                 </constraints>
                                 <color key="onTintColor" red="0.86078470949999997" green="0.18536329269999999" blue="0.54119461769999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="chartSwitch:" destination="Cef-19-GEJ" eventType="valueChanged" id="una-6U-VBj"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beautiful Chart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-rK-u6w">
                                 <rect key="frame" x="9" y="626" width="133" height="13"/>
@@ -218,8 +221,8 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
                     <connections>
-                        <outlet property="barChart" destination="9yc-l6-r7t" id="Xoi-ke-7MJ"/>
                         <outlet property="basicBarChart" destination="hag-qb-zNk" id="4VX-9R-0xI"/>
+                        <outlet property="beautifulBarChart" destination="9yc-l6-r7t" id="Xoi-ke-7MJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfR-Wl-hGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
