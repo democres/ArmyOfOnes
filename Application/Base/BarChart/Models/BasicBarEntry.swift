@@ -21,7 +21,7 @@ struct BasicBarEntry {
     }
     
     var textValueFrame: CGRect {
-        return CGRect(x: origin.x - space/2, y: origin.y - 30, width: barWidth + space, height: 22)
+        return CGRect(x: origin.x - space/2, y: origin.y - 30, width: barWidth + space + 10, height: 22)
     }
     
     var barFrame: CGRect {

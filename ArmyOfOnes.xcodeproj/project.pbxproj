@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2730726D22A9265200618110 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730725A22A9265200618110 /* ViewController.swift */; };
-		2730726E22A9265200618110 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730725A22A9265200618110 /* ViewController.swift */; };
-		2730726F22A9265200618110 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730725A22A9265200618110 /* ViewController.swift */; };
 		2730727022A9265200618110 /* CustomSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730725B22A9265200618110 /* CustomSegments.swift */; };
 		2730727122A9265200618110 /* CustomSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730725B22A9265200618110 /* CustomSegments.swift */; };
 		2730727222A9265200618110 /* CustomSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730725B22A9265200618110 /* CustomSegments.swift */; };
@@ -246,7 +243,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2730725A22A9265200618110 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2730725B22A9265200618110 /* CustomSegments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegments.swift; sourceTree = "<group>"; };
 		2730725C22A9265200618110 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		2730725D22A9265200618110 /* BasicBarChartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarChartPresenter.swift; sourceTree = "<group>"; };
@@ -1822,18 +1818,10 @@
 		2730725922A9265200618110 /* BarChart */ = {
 			isa = PBXGroup;
 			children = (
-				2730725A22A9265200618110 /* ViewController.swift */,
-				2730725B22A9265200618110 /* CustomSegments.swift */,
-				2730725C22A9265200618110 /* CALayerExtension.swift */,
-				2730725D22A9265200618110 /* BasicBarChartPresenter.swift */,
-				2730725E22A9265200618110 /* UIBezierPathExtension.swift */,
-				2730725F22A9265200618110 /* BasicBarChart.swift */,
-				2730726022A9265200618110 /* ArrayExtension.swift */,
-				2730726122A9265200618110 /* DataEntry.swift */,
-				2730726322A9265200618110 /* BeautifulBarEntry.swift */,
-				2730726822A9265200618110 /* BeautifulBarChart.swift */,
-				2730726922A9265200618110 /* BasicBarEntry.swift */,
-				2730726A22A9265200618110 /* BeautifulBarChartPresenter.swift */,
+				2769370222AA9A6E00EE3685 /* Presenters */,
+				2769370122AA9A5300EE3685 /* Views */,
+				2769370022AA9A0100EE3685 /* Extensions */,
+				276936FF22AA99F900EE3685 /* Models */,
 			);
 			path = BarChart;
 			sourceTree = "<group>";
@@ -1845,6 +1833,45 @@
 				2730725822A9263400618110 /* Models */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		276936FF22AA99F900EE3685 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2730726322A9265200618110 /* BeautifulBarEntry.swift */,
+				2730725B22A9265200618110 /* CustomSegments.swift */,
+				2730726922A9265200618110 /* BasicBarEntry.swift */,
+				2730726122A9265200618110 /* DataEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2769370022AA9A0100EE3685 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2730725C22A9265200618110 /* CALayerExtension.swift */,
+				2730725E22A9265200618110 /* UIBezierPathExtension.swift */,
+				2730726022A9265200618110 /* ArrayExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2769370122AA9A5300EE3685 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2730725F22A9265200618110 /* BasicBarChart.swift */,
+				2730726822A9265200618110 /* BeautifulBarChart.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2769370222AA9A6E00EE3685 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				2730725D22A9265200618110 /* BasicBarChartPresenter.swift */,
+				2730726A22A9265200618110 /* BeautifulBarChartPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		276E89F122A7D01100260E67 /* Extensions */ = {
@@ -4949,7 +4976,6 @@
 				276E89F322A7D06200260E67 /* UIColor.swift in Sources */,
 				2730727F22A9265200618110 /* ArrayExtension.swift in Sources */,
 				273072A322A936E500618110 /* Currency.swift in Sources */,
-				2730726D22A9265200618110 /* ViewController.swift in Sources */,
 				2730729722A9265200618110 /* BeautifulBarChartPresenter.swift in Sources */,
 				27B90B9422A7695B00FAA33E /* AppDelegate.swift in Sources */,
 			);
@@ -4966,7 +4992,6 @@
 				2730728922A9265200618110 /* BeautifulBarEntry.swift in Sources */,
 				276E89FE22A7D58400260E67 /* CurrencyController.swift in Sources */,
 				276E89F422A7D06200260E67 /* UIColor.swift in Sources */,
-				2730726E22A9265200618110 /* ViewController.swift in Sources */,
 				2730727422A9265200618110 /* CALayerExtension.swift in Sources */,
 				2730727D22A9265200618110 /* BasicBarChart.swift in Sources */,
 				273072A422A936E500618110 /* Currency.swift in Sources */,
@@ -4992,7 +5017,6 @@
 				2730728A22A9265200618110 /* BeautifulBarEntry.swift in Sources */,
 				276E89FF22A7D58400260E67 /* CurrencyController.swift in Sources */,
 				276E89F522A7D06200260E67 /* UIColor.swift in Sources */,
-				2730726F22A9265200618110 /* ViewController.swift in Sources */,
 				2730727522A9265200618110 /* CALayerExtension.swift in Sources */,
 				2730727E22A9265200618110 /* BasicBarChart.swift in Sources */,
 				273072A522A936E500618110 /* Currency.swift in Sources */,

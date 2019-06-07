@@ -23,7 +23,7 @@ struct BeautifulBarEntry {
         self.barHeight = barHeight
         self.data = data
         self.mainBarEntry = MainBarEntry(origin: self.origin, barWidth: barWidth, barHeight: barHeight)
-        self.topBubbleEntry = TopBubbleEntry(bottomLeftPoint: CGPoint(x: self.origin.x, y: self.origin.y + barHeight), barWidth: barWidth, barHeight: barHeight)
+        self.topBubbleEntry = TopBubbleEntry(bottomLeftPoint: CGPoint(x: self.origin.x, y: self.origin.y + barHeight), barWidth: barWidth + 15, barHeight: barHeight)
     }
     
     var bottomTitleFrame: CGRect {
