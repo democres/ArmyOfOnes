@@ -9,10 +9,14 @@
 import Foundation
 import UIKit
 
-class ChartViewController: UIViewController {
+class ChartViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var basicBarChart: BasicBarChart?
     @IBOutlet weak var beautifulBarChart: BeautifulBarChart?
+    @IBOutlet weak var randomCurrencyTextField: UITextField?
+    @IBOutlet weak var convertButton: UIButton?
     
+    @IBOutlet weak var amountTitleLabel: UILabel?
+    @IBOutlet weak var baseTitleLabel: UILabel?
     private let numEntry = 5
 
     var currencyAmount: Float?
@@ -20,14 +24,35 @@ class ChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        randomCurrencyTextField?.addBorderToTextField()
         fetchViewControllerData()
+        buttonsWithShadows()
+        
+        randomCurrencyTextField?.delegate = self
     }
     
+    func buttonsWithShadows(){
+        convertButton?.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        convertButton?.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        convertButton?.layer.shadowOpacity = 1.0
+        convertButton?.layer.shadowRadius = 3.0
+        convertButton?.layer.masksToBounds = false
+        convertButton?.layer.cornerRadius = 4.0
+    }
 
-    func fetchViewControllerData(){
-        
+    func fetchViewControllerData(base: String? = "USD"){
         // Move to a background thread to do some long running work
         DispatchQueue.global(qos: .userInitiated).async {
+            if base != "USD" {
+                CurrencyController.getExchangeRateCustomBase(base: base ?? "USD", completion: { (Currency) in
+                    // Bounce back to the main thread to update the UI
+                    DispatchQueue.main.async {
+                        self.currency = Currency
+                        self.generateChart()
+                    }
+                })
+                return
+            }
             CurrencyController.getExchangeRate(completion: { (Currency) in
                 // Bounce back to the main thread to update the UI
                 DispatchQueue.main.async {
@@ -43,13 +68,6 @@ class ChartViewController: UIViewController {
         let dataEntries = generateDataEntries()
         basicBarChart?.updateDataEntries(dataEntries: dataEntries, animated: true)
         beautifulBarChart?.updateDataEntries(dataEntries: dataEntries, animated: true)
-//
-//        let timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) {[weak self] (timer) in
-//            let dataEntries = self?.generateRandomDataEntries()
-//            self?.barChart?.updateDataEntries(dataEntries: dataEntries!, animated: true)
-//            self?.basicBarChart?.updateDataEntries(dataEntries: dataEntries!, animated: true)
-//        }
-//        timer.fire()
     }
     
     func generateDataEntries() -> [DataEntry] {
@@ -64,18 +82,19 @@ class ChartViewController: UIViewController {
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 2
         
-        guard let rates = ratesArray else { return result}
+        guard let rates = ratesArray else { return result }
         var i = 0
         for rate in rates {
             let value = Float(truncating: rate.value as? NSNumber ?? 1)
             let height = value / ( value > 100 ? 1000 : 100)
-            result.append(DataEntry(color: colors[i % colors.count], height: height, textValue:formatter.string(from: NSNumber(value: value)) ?? "", title: rate.key))
+            result.append(DataEntry(color: colors[i % colors.count], height: height, textValue:formatter.string(from: NSNumber(value: (value * (currencyAmount ?? 1)))) ?? "", title: rate.key))
             i += 1
         }
         
         return result
     }
     
+    //MARK: Actions
     @IBAction func chartSwitch(_ sender: UISwitch) {
         if sender.isOn {
             basicBarChart?.isHidden = true
@@ -85,6 +104,23 @@ class ChartViewController: UIViewController {
             beautifulBarChart?.isHidden = true
         }
     }
+    @IBAction func convertCustom(_ sender: Any) {
+        guard let text = randomCurrencyTextField?.text, text.count == 3 else { return }
+        fetchViewControllerData(base: text.uppercased())
+        self.baseTitleLabel?.text = text.uppercased()
+    }
+    
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: Delegates
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.count + string.count - range.length
+        return newLength <= 3
+    }
+    
     
 }
 

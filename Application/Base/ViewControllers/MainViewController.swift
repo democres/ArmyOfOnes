@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITextFieldDelegate {
+class MainViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var hugeIconBackground: UIView?
     @IBOutlet weak var hugeIconLabel: UILabel?
@@ -19,12 +19,17 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.navigationController?.isNavigationBarHidden = true
         colorAnimations()
-        addBorderToTextView()
         addShadows()
+        textField?.addBorderToTextField()
         self.hideKeyboardWhenTappedAround()
         
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.openHuge(sender:)))
+        tap.delegate = self
+        hugeIconBackground?.isUserInteractionEnabled = true
+        hugeIconBackground?.addGestureRecognizer(tap)
     }
     
     func addShadows(){
@@ -43,16 +48,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         hugeIconBackground?.layer.masksToBounds = false
         hugeIconBackground?.layer.cornerRadius = 4.0
     }
-
-    func addBorderToTextView() {
-        guard let textField = textField else { return }
-        let border = CALayer()
-        border.backgroundColor = UIColor.black.cgColor
-        border.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)
-        textField.layer.addSublayer(border)
-        textField.layer.masksToBounds = true
-    }
-    
     
     func colorAnimations(){
         
@@ -74,8 +69,17 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @objc func openHuge(sender: UITapGestureRecognizer? = nil) {
+        if let url = URL(string: "https://www.hugeinc.com/") {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
+    
     @IBAction func calculate(_ sender: Any) {
-        print("A")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ChartViewController") as! ChartViewController
+        controller.currencyAmount = Float(textField?.text ?? "10.0")
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     //MARK: TextField Delegates

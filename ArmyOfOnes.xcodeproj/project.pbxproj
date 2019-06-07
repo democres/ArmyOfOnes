@@ -78,6 +78,7 @@
 		27B90BE822A7CA6600FAA33E /* hugeFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B90BE522A7CA6600FAA33E /* hugeFont.ttf */; };
 		27CADB7022A94607002688CD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273072A022A92FEB00618110 /* Alamofire.framework */; };
 		27CAE21E22A9493B002688CD /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CAE1D222A94926002688CD /* ObjectMapper.framework */; };
+		27ED219722AA85A600AF4544 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED219622AA85A600AF4544 /* UITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1780,6 +1781,7 @@
 		27CAE1DB22A94926002688CD /* 11703426-54C3-3028-91A5-AF30B21FBD2F.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "11703426-54C3-3028-91A5-AF30B21FBD2F.bcsymbolmap"; sourceTree = "<group>"; };
 		27CAE1DC22A94926002688CD /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
 		27CAE1DD22A94926002688CD /* .ObjectMapper.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .ObjectMapper.version; sourceTree = "<group>"; };
+		27ED219622AA85A600AF4544 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1850,6 +1852,7 @@
 			children = (
 				276E89F222A7D06200260E67 /* UIColor.swift */,
 				276E8A0122A7E37F00260E67 /* UIViewController.swift */,
+				27ED219622AA85A600AF4544 /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -4935,6 +4938,7 @@
 				2730727922A9265200618110 /* UIBezierPathExtension.swift in Sources */,
 				2730727622A9265200618110 /* BasicBarChartPresenter.swift in Sources */,
 				27B90B9622A7695B00FAA33E /* MainViewController.swift in Sources */,
+				27ED219722AA85A600AF4544 /* UITextField.swift in Sources */,
 				2730729422A9265200618110 /* BasicBarEntry.swift in Sources */,
 				2730728222A9265200618110 /* DataEntry.swift in Sources */,
 				2730727C22A9265200618110 /* BasicBarChart.swift in Sources */,
